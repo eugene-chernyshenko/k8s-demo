@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: myconfigmap
+  namespace: demo
+data:
+  index.html: |
+    <h1>hello</h1>
+    <p>world!</p>

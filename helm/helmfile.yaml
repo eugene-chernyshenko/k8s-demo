@@ -1,0 +1,7 @@
+releases:
+  - name: xyz
+    namespace: demo
+    chart: foo
+    version: ""
+    values:
+      - values.yaml
