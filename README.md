@@ -75,3 +75,21 @@ brew install helmfile
 ### statefulset
 
 12-statefulset.yaml
+
+### watch api
+
+create crb
+
+```
+kubectl create rolebinding default-to-admin \
+  --clusterrole=admin \
+  --serviceaccount=default:default \
+  --namespace=default
+```
+
+watch pod events
+
+```
+curl -sSk -H "Authorization: Bearer $KUBE_TOKEN" \
+https://$KUBERNETES_SERVICE_HOST:$KUBERNETES_PORT_443_TCP_PORT/api/v1/namespaces/default/pods?watch
+```
